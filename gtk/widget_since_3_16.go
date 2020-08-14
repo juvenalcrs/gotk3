@@ -8,3 +8,6 @@ import "C"
 // TODO:
 // gtk_widget_list_action_prefixes().
 // gtk_widget_get_action_group().
+func (v *Widget) GetActionGroup(name string) glib.IActionGroup{
+  return C.gtk_widget_get_action_group(v.native(), (*C.gchar)(C.CString(name)))  
+}
